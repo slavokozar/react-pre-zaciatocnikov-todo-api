@@ -9,6 +9,6 @@
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-
+<h1>aaa</h1>
     </body>
 </html>
