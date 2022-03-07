@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="534" height="535" viewBox="0 0 534 535">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_33" data-name="Rectangle 33" width="542.112" height="547" fill="rgba(146,241,234,0.81)"/>
+    </clipPath>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="534" height="535"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" clip-path="url(#clip-Custom_Size_1)">
+    <g id="Group_5" data-name="Group 5" transform="translate(-4.056 -5)" clip-path="url(#clip-path)">
+      <path id="Path_1" data-name="Path 1" d="M264.415,222.247l253.66-146.26L391.861,3.075,264.366,76.589,136.711,2.886,10.455,75.726Z" transform="translate(6.791 1.874)" fill="rgba(146,241,234,0.81)"/>
+      <path id="Path_2" data-name="Path 2" d="M256.031,207.236,2.536,60.689,2.5,206.451l127.412,73.657v147.4l126.21,72.921Z" transform="translate(1.624 39.42)" fill="rgba(146,241,234,0.81)"/>
+      <path id="Path_3" data-name="Path 3" d="M172.481,207.236l253.5-146.547.036,145.762L298.6,280.108v147.4L172.39,500.429Z" transform="translate(111.975 39.42)" fill="rgba(146,241,234,0.81)"/>
+    </g>
+  </g>
+</svg>

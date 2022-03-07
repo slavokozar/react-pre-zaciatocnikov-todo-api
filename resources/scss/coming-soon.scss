@@ -1,0 +1,127 @@
+.main {
+  display: flex;
+  padding-top: 15rem !important;
+  position: relative;
+
+  &__left {
+    width: 40%;
+  //background: red;
+
+    h1 {
+      font-size: 13rem;
+      line-height: 12rem;
+      color: $color-white;
+      font-family: $font-primary;
+    }
+  }
+
+  &__right {
+    width: 60%;
+    //background: blue;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 354px;
+      width: 166%;
+      height: 1px;
+      background: $color-purple;
+    }
+
+    img {
+      position: absolute;
+      left: 100px;
+      bottom: 0;
+      width: 450px;
+      max-width: 100%;
+    }
+
+    .progress {
+      position: absolute;
+      right: 20px;
+      top: 110px;
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      color: $color-purple;
+      text-transform: uppercase;
+      font-family: $font-primary-medium;
+
+      &__number {
+        font-size: 8rem;
+        line-height: 8rem;
+      }
+
+      &__text {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .main {
+
+    &__left {
+      width: 50%;
+
+      h1 {
+        font-size: 11rem;
+        line-height: 12rem;
+      }
+    }
+
+    &__right {
+      width: 50%;
+
+      &:after {
+        bottom: 356px;
+        width: 200%;
+      }
+
+      img {
+        position: absolute;
+        left: 0;
+        bottom: 80px;
+        width: 350px;
+        max-width: 100%;
+      }
+
+      .progress {
+
+        &__number {
+          font-size: 7rem;
+          line-height: 7rem;
+        }
+
+        &__text {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .main {
+    flex-wrap: wrap;
+
+    &__left {
+      width: 100%;
+      text-align: center;
+
+      h1 {
+        font-size: 8rem;
+        line-height: 9rem;
+      }
+    }
+
+    &__right {
+      display: none;
+    }
+  }
+}

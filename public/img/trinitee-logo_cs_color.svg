@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="534" height="420" viewBox="0 0 534 420">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.836" x2="0.5" y2="0.007" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#193342"/>
+      <stop offset="1" stop-color="#cc27d8"/>
+    </linearGradient>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="534" height="420"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" clip-path="url(#clip-Custom_Size_1)">
+    <path id="Intersection_1" data-name="Intersection 1" d="M2411.46,246.657,2630.55,120h34.41l.031,125.872-127.412,73.657v147.4l-126.21,72.922ZM2258.54,466.932v-147.4l-127.412-73.657L2131.16,120h34.411l219.09,126.657.09,293.2ZM2217.73,120h361.051L2398.2,224.122Z" transform="translate(-2131.128 -120)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

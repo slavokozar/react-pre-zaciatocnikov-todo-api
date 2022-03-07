@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="532" height="535" viewBox="0 0 532 535">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.836" x2="0.5" y2="0.007" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#193342"/>
+      <stop offset="1" stop-color="#cc27d8"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_33" data-name="Rectangle 33" width="542.112" height="547" fill="rgba(146,241,234,0.81)"/>
+    </clipPath>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="532" height="535"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" clip-path="url(#clip-Custom_Size_1)">
+    <g id="Group_8" data-name="Group 8" transform="translate(-5.001 -5)">
+      <g id="Group_5" data-name="Group 5" clip-path="url(#clip-path)">
+        <path id="Path_1" data-name="Path 1" d="M264.415,222.247l253.66-146.26L391.861,3.075,264.366,76.589,136.711,2.886,10.455,75.726Z" transform="translate(6.791 1.874)" fill="rgba(146,241,234,0.81)"/>
+        <path id="Path_2" data-name="Path 2" d="M256.031,207.236,2.536,60.689,2.5,206.451l127.412,73.657v147.4l126.21,72.921Z" transform="translate(1.624 39.42)" fill="rgba(146,241,234,0.81)"/>
+        <path id="Path_3" data-name="Path 3" d="M172.481,207.236l253.5-146.547.036,145.762L298.6,280.108v147.4l-126.21,72.921Z" transform="translate(111.975 39.42)" fill="rgba(146,241,234,0.81)"/>
+      </g>
+    </g>
+    <path id="Intersection_1" data-name="Intersection 1" d="M2411.457,246.657,2630.546,120h34.41l.031,125.872-127.412,73.657v147.4l-126.21,72.922ZM2258.536,466.932v-147.4l-127.412-73.657L2131.155,120h34.411l219.09,126.657.09,293.2ZM2217.734,120h361.051l-180.58,104.122Z" transform="translate(-2132 -5)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
