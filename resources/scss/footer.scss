@@ -2,15 +2,21 @@
   display: flex;
   max-width: 1400px;
   width: 100%;
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto 2rem auto;
   padding: 2rem 1rem 0 1rem;
   border-top: 1px solid $color-secondary;
 
-  &__column {
-    width: 15%;
 
-    &:last-of-type {
-      width: auto;
+  &__column {
+    width: 25%;
+
+    h3 {
+      font-size: 2rem;
+      margin-bottom: .2rem;
+    }
+
+    p {
+      font-size: 1.8rem;
     }
   }
 }
@@ -19,13 +25,11 @@
 
   .footer {
     flex-wrap: wrap;
+    text-align: center;
 
     &__column {
-      width: 33.3%;
-
-      &:last-of-type {
-        width: 100%;
-      }
+      margin-bottom: 2rem;
+      width: 100%;
     }
   }
 }

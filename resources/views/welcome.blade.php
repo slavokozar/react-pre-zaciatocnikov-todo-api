@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image" sizes="192x192" href="img/favicon/android-icon-192x192.png">
     <link rel="icon" type="image" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image" sizes="96x96" href="img/favicon/favicon-96x96.png">
     <link rel="icon" type="image" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -29,60 +29,76 @@
     <script src="https://kit.fontawesome.com/251a70c0d2.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar">
-    <div class="navbar__inner">
-        <div class="navbar__logo">
-            <a href="/"><img src="{{asset('img/trinitee-logo_dark.svg')}}" alt="trinitee"></a>
+
+<div class="cs-page">
+    <nav class="navbar">
+        <div class="navbar__inner">
+            <div class="navbar__logo">
+                <a href="/"><img src="{{asset('img/trinitee-logo_dark.svg')}}" alt="trinitee"></a>
+            </div>
+
+            <a href="https://www.linkedin.com/company/trinitee" target="_blank" class="navbar__icon" title="linkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
         </div>
 
-        <a href="https://www.linkedin.com/company/trinitee" target="_blank" class="navbar__icon">
-            <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-    </div>
+    </nav>
+    <main class="main wrapper">
 
-</nav>
-<main class="main wrapper">
-
-    <div class="main__left">
-        <h1>We’re coming soon</h1>
-        <a href="mailto:hello@trinitee.com" class="btn btn--white">Contact Us<i class="fa-solid fa-envelope"></i></a>
-    </div>
-
-    <div class="main__right">
-        <img class="img1" src="{{asset('img/trinitee-logo_cs.svg')}}" alt="trinitee progress">
-
-    <div class="progress">
-
-        <div class="progress__number">
-            78%
+        <div class="main__left">
+            <h1>We’re coming soon</h1>
+            <a href="mailto:hello@trinitee.com" class="btn btn--white">Contact Us<i
+                        class="fa-solid fa-envelope"></i></a>
         </div>
 
-        <div class="progress__text">
-            complete
+        <div class="main__right">
+            <img class="img1" src="{{asset('img/trinitee-logo_cs.svg')}}" alt="trinitee progress">
+
+            <div class="progress">
+
+                <div class="progress__number">
+                    78%
+                </div>
+
+                <div class="progress__text">
+                    complete
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
 
-</main>
+    </main>
 
 
-<footer class="footer">
+    <footer class="footer">
 
-    <div class="footer__column">
-        <p>trinitee, s.r.o.</p>
-    </div>
-    <div class="footer__column">
-        <a href="mailto:hello@trinitee.com">hello@trinitee.com</a>
-    </div>
-    <div class="footer__column">
-        <p>Komenského 11A<br>
-            040 01 Košice<br>
-            Slovakia</p>
-    </div>
-    <div class="footer__column">
-        <img src="{{asset('img/contact-map.svg')}}" alt="">
-    </div>
+        <div class="footer__column">
+            <h3>trinitee, s.r.o.</h3>
+            <p>
+                Komenského 11A, 3rd floor<br>
+                Košice 04001<br>
+                Slovakia`
+            </p>
+        </div>
+        <div class="footer__column">
+            <h3>Contact us</h3>
+            <p>
+                <a href="mailto:info@trinitee.com">info@trinitee.com</a><br>
+                <a href="tel:+421948877664">+421 948 877 664</a>
+            </p>
 
-</footer>
+
+        </div>
+        <div class="footer__column">
+
+            <h3>Our offices</h3>
+            <p>Kosice, SK<br>
+                Prague, CZ<br>
+                Feldkirch, AT
+            </p>
+        </div>
+
+    </footer>
+</div>
+
 </body>
 </html>

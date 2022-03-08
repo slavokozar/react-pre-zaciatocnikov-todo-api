@@ -1,7 +1,5 @@
 .navbar {
-  position: absolute;
-  top: 2rem;
-  left: 0;
+  margin-top: 2rem;
   width: 100%;
   z-index: 1;
 
@@ -16,7 +14,6 @@
   }
 
   &__logo {
-    width: 150px;
 
     img {
       width: 100%;
@@ -27,12 +24,21 @@
     width: 30px;
     height: 30px;
     display: flex;
-    align-items: center;
+    padding-top: 6px;
     justify-content: center;
-    border: 1px solid $color-secondary;
+    border: 2px solid $color-secondary;
+    transition: all .2s;
+
+    &:hover {
+      background: $color-secondary;
+
+      i {
+        color: $color-primary;
+      }
+    }
 
     i {
-      font-size: 1.4rem;
+      font-size: 1.9rem;
     }
   }
 }
