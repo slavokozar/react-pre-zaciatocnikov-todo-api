@@ -76,13 +76,13 @@
             <p>
                 Komenského 11A, 3rd floor<br>
                 Košice 04001<br>
-                Slovakia`
+                Slovakia
             </p>
         </div>
         <div class="footer__column">
             <h3>Contact us</h3>
             <p>
-                <a href="mailto:info@trinitee.com">info@trinitee.com</a><br>
+                <a href="mailto:hello@trinitee.com">hello@trinitee.com</a><br>
                 <a href="tel:+421948877664">+421 948 877 664</a>
             </p>
 
