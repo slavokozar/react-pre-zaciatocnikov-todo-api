@@ -261,9 +261,9 @@ INTRO
      *
      */
     'example_languages' => [
+        'axios',
         'bash',
-        'javascript',
-        'axios'
+        'javascript'
     ],
 
     /*

@@ -21,9 +21,9 @@
 
     <style id="language-style">
         /* starts out as display none and is replaced with js later  */
+                    body .content .axios-example code { display: none; }
                     body .content .bash-example code { display: none; }
                     body .content .javascript-example code { display: none; }
-                    body .content .axios-example code { display: none; }
             </style>
 
     <script>
@@ -37,7 +37,7 @@
 
 </head>
 
-<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;axios&quot;]">
+<body data-languages="[&quot;axios&quot;,&quot;bash&quot;,&quot;javascript&quot;]">
 
 <a href="#" id="nav-button">
     <span>
@@ -48,9 +48,9 @@
 <div class="tocify-wrapper">
     
             <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="axios">axios</button>
                                             <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                             <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
-                                            <button type="button" class="lang-button" data-language-name="axios">axios</button>
                     </div>
     
     <div class="search">
@@ -100,7 +100,7 @@
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
         <ul class="toc-footer" id="last-updated">
-        <li>Last updated: April 2 2022</li>
+        <li>Last updated: April 19 2022</li>
     </ul>
 </div>
 
@@ -117,7 +117,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <pre><code class="language-yaml">http://127.0.0.1:8000</code></pre>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>Authenticate requests to this API's endpoints by sending a query parameter <strong><code>api_token</code></strong> in the request.</p>
+<p>To authenticate requests, include a query parameter <strong><code>api_token</code></strong> in the request.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 
         <h1 id="endpoints">Endpoints</h1>
@@ -134,6 +134,12 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <span id="example-requests-GETapi-tasks">
 <blockquote>Example request:</blockquote>
+
+
+<div class="axios-example">
+    <pre><code class="language-javascript">
+axios.get('http://127.0.0.1:8000/api/tasks?api_token=YOUR_AUTH_KEY')
+</code></pre></div>
 
 
 <div class="bash-example">
@@ -164,17 +170,11 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
-
-<div class="axios-example">
-    <pre><code class="language-javascript">
-axios.get('http://127.0.0.1:8000/api/tasks?api_token=YOUR_AUTH_KEY')
-</code></pre></div>
-
 </span>
 
 <span id="example-responses-GETapi-tasks">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary>
@@ -182,34 +182,13 @@ axios.get('http://127.0.0.1:8000/api/tasks?api_token=YOUR_AUTH_KEY')
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre>
         </details>         <pre>
 
-<code class="language-json">[
-    {
-        &quot;id&quot;: 1,
-        &quot;text&quot;: &quot;Nain&scaron;taluj si Node.js&quot;,
-        &quot;active&quot;: true
-    },
-    {
-        &quot;id&quot;: 2,
-        &quot;text&quot;: &quot;Na&scaron;tuduj prezent&aacute;cie z Kurz pre začiaťočn&iacute;kov&quot;,
-        &quot;active&quot;: true
-    },
-    {
-        &quot;id&quot;: 3,
-        &quot;text&quot;: &quot;Priebežne pracuj na zadaniach&quot;,
-        &quot;active&quot;: true
-    },
-    {
-        &quot;id&quot;: 4,
-        &quot;text&quot;: &quot;Staň sa react developerom&quot;,
-        &quot;active&quot;: true
-    }
-]</code>
+<code class="language-json">{
+    &quot;message&quot;: &quot;&quot;
+}</code>
  </pre>
     </span>
 <span id="execution-results-GETapi-tasks" hidden>
@@ -276,13 +255,22 @@ access-control-allow-origin: *
 <blockquote>Example request:</blockquote>
 
 
+<div class="axios-example">
+    <pre><code class="language-javascript">
+axios.post('http://127.0.0.1:8000/api/tasks?api_token=YOUR_AUTH_KEY', { 
+    "text": "nxajznlewbtopepuzfalfipgwmxfyafzsfvblateoqnzqmxglpxladtjqklnckmryvgcihxbqvjkewklqtnzmwpgwbmlxkzrtnfzsojtwpezwcnbhtzojrwynbigwfeysmjajcgayldxjsjmrulsptfnkezbmzisiyffbzeforppahumcrsavjvniwvybhoxwawaxrgozwuuzcx",
+    "active": "",
+}
+</code></pre></div>
+
+
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://127.0.0.1:8000/api/tasks?api_token=YOUR_AUTH_KEY" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"text\": \"lovsevdvwauiqtwlzaytmupaeyprfsuwexbzl\",
+    \"text\": \"nxajznlewbtopepuzfalfipgwmxfyafzsfvblateoqnzqmxglpxladtjqklnckmryvgcihxbqvjkewklqtnzmwpgwbmlxkzrtnfzsojtwpezwcnbhtzojrwynbigwfeysmjajcgayldxjsjmrulsptfnkezbmzisiyffbzeforppahumcrsavjvniwvybhoxwawaxrgozwuuzcx\",
     \"active\": false
 }"
 </code></pre></div>
@@ -305,7 +293,7 @@ const headers = {
 };
 
 let body = {
-    "text": "lovsevdvwauiqtwlzaytmupaeyprfsuwexbzl",
+    "text": "nxajznlewbtopepuzfalfipgwmxfyafzsfvblateoqnzqmxglpxladtjqklnckmryvgcihxbqvjkewklqtnzmwpgwbmlxkzrtnfzsojtwpezwcnbhtzojrwynbigwfeysmjajcgayldxjsjmrulsptfnkezbmzisiyffbzeforppahumcrsavjvniwvybhoxwawaxrgozwuuzcx",
     "active": false
 };
 
@@ -315,17 +303,11 @@ fetch(url, {
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
-
-<div class="axios-example">
-    <pre><code class="language-javascript">
-axios.post('http://127.0.0.1:8000/api/tasks?api_token=YOUR_AUTH_KEY')
-</code></pre></div>
-
 </span>
 
 <span id="example-responses-POSTapi-tasks">
             <blockquote>
-            <p>Example response (201):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary>
@@ -333,16 +315,12 @@ axios.post('http://127.0.0.1:8000/api/tasks?api_token=YOUR_AUTH_KEY')
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre>
         </details>         <pre>
 
 <code class="language-json">{
-    &quot;text&quot;: &quot;lovsevdvwauiqtwlzaytmupaeyprfsuwexbzl&quot;,
-    &quot;id&quot;: 7,
-    &quot;active&quot;: true
+    &quot;message&quot;: &quot;&quot;
 }</code>
  </pre>
     </span>
@@ -402,7 +380,7 @@ access-control-allow-origin: *
                 <input type="text"
                name="text"
                data-endpoint="POSTapi-tasks"
-               value="lovsevdvwauiqtwlzaytmupaeyprfsuwexbzl"
+               value="nxajznlewbtopepuzfalfipgwmxfyafzsfvblateoqnzqmxglpxladtjqklnckmryvgcihxbqvjkewklqtnzmwpgwbmlxkzrtnfzsojtwpezwcnbhtzojrwynbigwfeysmjajcgayldxjsjmrulsptfnkezbmzisiyffbzeforppahumcrsavjvniwvybhoxwawaxrgozwuuzcx"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -442,13 +420,22 @@ access-control-allow-origin: *
 <blockquote>Example request:</blockquote>
 
 
+<div class="axios-example">
+    <pre><code class="language-javascript">
+axios.put('http://127.0.0.1:8000/api/tasks/1?api_token=YOUR_AUTH_KEY', { 
+    "text": "plgfrpewgstdjfndcgtmxzqjsbmrkaknyqayzlbuezeaddtwhrenrteezuiddietlshymihtkngmhoskfogazmo",
+    "active": "",
+}
+</code></pre></div>
+
+
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://127.0.0.1:8000/api/tasks/1?api_token=YOUR_AUTH_KEY" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"text\": \"cpeldwijyujnoeefximscauiaeuwkldqdungakjjxlrjzjyffuxfalegeqvfmaujvxmpoezejnkpjjhzwzosclaednhrxtnbirkbstxmgmguqfiwdrdaznjmnmroydvwnuoivgfazupvukqwdttdli\",
+    \"text\": \"plgfrpewgstdjfndcgtmxzqjsbmrkaknyqayzlbuezeaddtwhrenrteezuiddietlshymihtkngmhoskfogazmo\",
     \"active\": false
 }"
 </code></pre></div>
@@ -471,7 +458,7 @@ const headers = {
 };
 
 let body = {
-    "text": "cpeldwijyujnoeefximscauiaeuwkldqdungakjjxlrjzjyffuxfalegeqvfmaujvxmpoezejnkpjjhzwzosclaednhrxtnbirkbstxmgmguqfiwdrdaznjmnmroydvwnuoivgfazupvukqwdttdli",
+    "text": "plgfrpewgstdjfndcgtmxzqjsbmrkaknyqayzlbuezeaddtwhrenrteezuiddietlshymihtkngmhoskfogazmo",
     "active": false
 };
 
@@ -481,17 +468,11 @@ fetch(url, {
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
-
-<div class="axios-example">
-    <pre><code class="language-javascript">
-axios.put('http://127.0.0.1:8000/api/tasks/1?api_token=YOUR_AUTH_KEY')
-</code></pre></div>
-
 </span>
 
 <span id="example-responses-PUTapi-tasks--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary>
@@ -499,16 +480,12 @@ axios.put('http://127.0.0.1:8000/api/tasks/1?api_token=YOUR_AUTH_KEY')
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre>
         </details>         <pre>
 
 <code class="language-json">{
-    &quot;id&quot;: 1,
-    &quot;text&quot;: &quot;cpeldwijyujnoeefximscauiaeuwkldqdungakjjxlrjzjyffuxfalegeqvfmaujvxmpoezejnkpjjhzwzosclaednhrxtnbirkbstxmgmguqfiwdrdaznjmnmroydvwnuoivgfazupvukqwdttdli&quot;,
-    &quot;active&quot;: false
+    &quot;message&quot;: &quot;&quot;
 }</code>
  </pre>
     </span>
@@ -583,7 +560,7 @@ access-control-allow-origin: *
                 <input type="text"
                name="text"
                data-endpoint="PUTapi-tasks--id-"
-               value="cpeldwijyujnoeefximscauiaeuwkldqdungakjjxlrjzjyffuxfalegeqvfmaujvxmpoezejnkpjjhzwzosclaednhrxtnbirkbstxmgmguqfiwdrdaznjmnmroydvwnuoivgfazupvukqwdttdli"
+               value="plgfrpewgstdjfndcgtmxzqjsbmrkaknyqayzlbuezeaddtwhrenrteezuiddietlshymihtkngmhoskfogazmo"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -623,6 +600,12 @@ access-control-allow-origin: *
 <blockquote>Example request:</blockquote>
 
 
+<div class="axios-example">
+    <pre><code class="language-javascript">
+axios.delete('http://127.0.0.1:8000/api/tasks/1?api_token=YOUR_AUTH_KEY')
+</code></pre></div>
+
+
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://127.0.0.1:8000/api/tasks/1?api_token=YOUR_AUTH_KEY" \
@@ -651,31 +634,25 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
-
-<div class="axios-example">
-    <pre><code class="language-javascript">
-axios.delete('http://127.0.0.1:8000/api/tasks/1?api_token=YOUR_AUTH_KEY')
-</code></pre></div>
-
 </span>
 
 <span id="example-responses-DELETEapi-tasks--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary>
                 <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
             </summary>
-            <pre><code class="language-http">content-type: text/html; charset=UTF-8
-cache-control: no-cache, private
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
 access-control-allow-origin: *
  </code></pre>
         </details>         <pre>
 
-<code class="language-json"></code>
+<code class="language-json">{
+    &quot;message&quot;: &quot;&quot;
+}</code>
  </pre>
     </span>
 <span id="execution-results-DELETEapi-tasks--id-" hidden>
@@ -747,9 +724,9 @@ access-control-allow-origin: *
     </div>
     <div class="dark-box">
                     <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="axios">axios</button>
                                                         <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                                         <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
-                                                        <button type="button" class="lang-button" data-language-name="axios">axios</button>
                             </div>
             </div>
 </div>

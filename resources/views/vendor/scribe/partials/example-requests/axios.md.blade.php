@@ -4,37 +4,39 @@
 
     $defaultHeaders = ["Content-Type", "Accept"];
     $hasHeaders = !empty($endpoint->headers) && !empty(array_diff(array_keys($endpoint->headers), $defaultHeaders));
-    $hasHeadersOrQueryOrBodyParams = $endpoint->hasHeadersOrQueryOrBodyParams() && $hasHeaders;
+    $hasHeadersOrQueryOrBodyParams = $endpoint->hasHeadersOrQueryOrBodyParams() || $hasHeaders;
+
+    $hasBodyParams = !empty($endpoint->cleanBodyParameters);
 @endphp
-
-
 
 
 
 ```javascript
 
 
-axios.{{ strtolower($endpoint->httpMethods[0]) }}('{{ rtrim($baseUrl, '/') . '/' . ltrim($endpoint->boundUri, '/') }}@if(count($endpoint->cleanQueryParameters))?{!! u::printQueryParamsAsString($endpoint->cleanQueryParameters) !!}@endif'@if($hasHeadersOrQueryOrBodyParams), { @else)@endif
-@if($hasHeadersOrQueryOrBodyParams)
-    @if($hasHeaders)
+axios.{{ strtolower($endpoint->httpMethods[0]) }}('{{ rtrim($baseUrl, '/') . '/' . ltrim($endpoint->boundUri, '/') }}@if(count($endpoint->cleanQueryParameters))?{!! u::printQueryParamsAsString($endpoint->cleanQueryParameters) !!}@endif'@if($hasBodyParams), { @else)@endif
 
-    'headers': {
-@foreach($endpoint->headers as $header => $value)
-        "{{ $header }}": "{{ $value }}",
-@endforeach
-    }@if(!empty($endpoint->cleanBodyParameters)),@endif
-    @if(!empty($endpoint->cleanBodyParameters))
-
-    'data': {
+@if($hasBodyParams)
 @foreach($endpoint->cleanBodyParameters as $parameter => $value)
-        "{{ $parameter }}": "{{ $value }}",
+    "{{ $parameter }}": "{{ $value }}",
 @endforeach
-    }
-    @endif
-@endif
-
 }
 @endif
+
+
+{{--    @if($hasHeaders)--}}
+
+{{--    'headers': {--}}
+{{--@foreach($endpoint->headers as $header => $value)--}}
+{{--        "{{ $header }}": "{{ $value }}",--}}
+{{--@endforeach--}}
+{{--    }@if(!empty($endpoint->cleanBodyParameters)),@endif--}}
+{{--    --}}
+{{--@endif--}}
+
+{{--@if($hasHeadersOrQueryOrBodyParams)--}}
+{{--}--}}
+{{--@endif--}}
 
 {{--    @elseif(!empty($endpoint->cleanBodyParameters))--}}
 {{--        @if ($endpoint->headers['Content-Type'] == 'application/x-www-form-urlencoded')--}}
