@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TaskRequest;
+use App\Http\Requests\TaskCreateRequest;
+use App\Http\Requests\TaskUpdateRequest;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -26,7 +27,7 @@ class TasksController extends Controller
      * @param TaskRequest $request
      * @return \App\Models\Task
      */
-    public function store(TaskRequest $request)
+    public function store(TaskCreateRequest $request)
     {
         $task = Task::create($request->all());
 
@@ -40,7 +41,7 @@ class TasksController extends Controller
      * @param TaskRequest $request
      * @return \App\Models\Task
      */
-    public function update(TaskRequest $request, Task $task)
+    public function update(TaskUpdateRequest $request, Task $task)
     {
         $task->update(
             array_merge(
